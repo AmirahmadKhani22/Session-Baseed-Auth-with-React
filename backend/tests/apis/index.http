@@ -1,0 +1,33 @@
+POST http://localhost:5174/v1/auth/register HTTP/1.1
+content-type: application/json
+
+{
+    "email": "tr1@tr1.tr1",
+    "password": "TR1tr1@12345"
+}
+###
+
+POST http://localhost:5174/v1/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "a@a.a",
+    "password": "Aa@12345"
+}
+###
+
+GET http://localhost:5174/v1/user/all HTTP/1.1
+content-type: application/json
+###
+
+GET http://localhost:5174/v1/user/2 HTTP/1.1
+content-type: application/json
+###
+
+GET http://localhost:5174/v1/user HTTP/1.1
+content-type: application/json
+###
+
+GET http://localhost:5174/v1/auth/logout HTTP/1.1
+content-type: application/json
+###
