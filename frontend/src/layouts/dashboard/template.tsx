@@ -13,7 +13,7 @@ type Props = {
 }
 
 function DashboardTemplate({children}: Props) {
-    const user = useAuthStore(state => state.user)!
+    const user = useAuthStore(state => state.user)
     const isLoggingOutUser = useAuthStore(state => state.isLoggingOutUser)
     const [isMenuOpened , setIsMenuOpened] = useState(true)
 
@@ -23,6 +23,21 @@ function DashboardTemplate({children}: Props) {
         setIsMenuOpened
     }
     
+    switch(user?.role) {
+        case "ADMIN": {
+            break
+        }
+        case "BUYER": {
+            break
+        }
+        case "SELLER": {
+            break
+        }
+        default: {
+            throw new Error("The user or user's role doesn't exists in dashboard layout!")
+        }
+    }
+
     return (
         <DashboardLayoutContext.Provider value={contextValue}>
             <div className="w-full h-screen overflow-hidden flex flex-col relative">

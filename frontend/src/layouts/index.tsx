@@ -17,7 +17,7 @@ function RootLayout({children}: Props) {
       getUser({externalController: ctrl.current})
       getUserTimeoutId = setTimeout(() => {
         ctrl.current.abort()
-      } , 1000)
+      } , 900)
     }
     return () => {
       if(getUserTimeoutId) {
